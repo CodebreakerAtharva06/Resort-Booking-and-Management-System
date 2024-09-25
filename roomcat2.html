@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resort Rooms</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 223,231);
+        }
+
+        .header {
+            height: 100px;
+            background: linear-gradient(to right, #333, #555);
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            font-family: 'Pacifico', cursive;
+        }
+
+        .para1 {
+            height: 100px;
+            width: 100%;
+            background-color: rgb(222, 236, 237);
+            border: 2px;
+            color: #5c5c5c;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+          max-width: 800px;
+          margin: 20px auto;
+          padding: 20px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 20px;
+          background-color: white;
+          align-items: start;
+}
+
+
+        .room {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .room:hover {
+            transform: scale(1.05);
+        }
+
+        .room img {
+            width: 100%;
+            height: auto;
+        }
+
+        .room-info {
+            padding: 20px;
+        }
+
+        .room-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .room-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #004080;
+        }
+        .bottom{
+            background-color:rgb(20, 48, 105);
+            text-align:center;
+            color:white;
+   }
+   .page {
+      display: none;
+      color:white;
+    }
+     
+    .fa {
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+    }
+    
+     .fa:hover {
+        opacity: 0.7;
+        color:red;
+    }
+    
+    .fa-facebook {
+      color: white;
+    }
+    .fa-whatsapp {
+      color: white;
+    }
+    .fa-twitter {
+      color: white;
+    }
+    .fa-instagram {
+      color: white;
+    }
+    .Aminities{
+      color: white;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome to Our Resort</h1>
+    </div>
+    <div class="container">
+        <div class="room">
+            <img src="https://www.sarova-rembrandthotel.com/wp-content/uploads/Superior-Single-2.jpg" alt="Room 1">
+            <div class="room-info">
+                <h2 class="room-title">Classic Room</h2>
+                <p class="room-description">Classic rooms, each with its own identity and special charm, offer our guests a special retreat.</p>
+                <a href="room1-details.html" class="btn">View Details</a>
+            </div>
+        </div>
+        <div class="room">
+            <img src="https://www.area83.in/ElementImages/5bf8a789-2234-4321-921d-da46e0660d3b_rgallery.jpg" alt="Room 2">
+            <div class="room-info">
+                <h2 class="room-title">Suite Room</h2>
+                <p class="room-description">Indulge yourself with an extraordinary stay in one of our suites, each with its own unique character.</p>
+                <a href="room2-details.html" class="btn">View Details</a>
+            </div>
+        </div>
+        <div class="room">
+            <img src="https://www.exoticadubai.tajhotels.com/wp-content/uploads/sites/470/2022/07/01-Luxury-Resort-View-Room-King-Bed-2000x1000.jpg " alt="Room 3"style="height: 260px;">
+            <div class="room-info">
+                <h2 class="room-title">Family Room</h2>
+                <p class="room-description">Ideal for families, these spacious rooms offer comfort and convenience for a relaxing holiday.</p>
+                <a href="room3-details.html" class="btn">View Details</a>
+            </div>
+        </div>
+        <div class="room">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/336062590.jpg?k=285442e401525dbd877e1b6415f6290ef5abc02790d804d22afc97e64864724c&o=&hp=1" alt="Room 4">
+            <div class="room-info">
+                <h2 class="room-title">Deluxe Room</h2>
+                <p class="room-description">Our deluxe rooms combine luxury with comfort, offering a memorable stay for our guests.</p>
+                <a href="room4-details.html" class="btn">View Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <h1><b>The Vella's</b></h1>
+        <a class="Aminities"href="roomcat2.html">Rooms</a><br>
+        <a class="Aminities"href="Gym.html">Gym</a><br>
+        <a class="Aminities"href="">Activities</a><br>
+        <a class="Aminities"href="">Facilities</a><br>
+        <a class="Aminities"href="Food.html">Food</a><br>
+      <h1>CONTACT US</h1>
+      <hr style="width:50%;">
+      <p>✉thevellas@gmail.com</p>
+      <p><a href="#" class="fa fa-whatsapp"></a> WhatsApp: +915629292049</p>
+      <p>📌address- Pyramid Complex, 81/82, East Main Road, MIT Lawns, Kothrud, Pune, Maharashtra 411036</p>
+      <p><b>FOLLOW US</b></p>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <hr style="width:70%;">
+      <p>&copy; Copyright 2024 THE VELLA'S Rstaurant A Unit Of Eventastic Hospitality LLP Powered  by UpSales Suite</p>
+      <p style="text-decoration-line: overline underline; font-size:20px; font-family: Sofia;">fssai</p>
+      <p>Licence Number: 123456700000</p>
+      <br>
+      </div>
+      </div>
+</body>
+
+</html>

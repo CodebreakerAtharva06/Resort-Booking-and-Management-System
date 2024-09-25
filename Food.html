@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Single Page Pagination Example</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.pagination {
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgb(20, 48, 105);
+  border: 1px solid #ddd;
+  margin-right: 5px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook,
+.fa-whatsapp,
+.fa-twitter,
+.fa-instagram {
+  color: white;
+}
+
+div.mycontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(136, 133, 107, 0.2);
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+  padding: 10px;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content {
+  margin-left: 0;
+}
+
+.rates {
+  margin-left: auto;
+  text-align: right;
+  font-size: 20px;
+}
+
+.img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  margin-right: 0;
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.bottom {
+  background-color: rgb(20, 48, 105);
+  text-align: center;
+  color: white;
+}
+
+.top {
+  background-color: rgb(20, 48, 105);
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.img_hover {
+  opacity: 0.5;
+}
+
+.img_hover:hover {
+  opacity: 1;
+  cursor: pointer;
+  border: solid black 3px;
+}
+
+.img_hover:active {
+  border: solid rgb(20, 48, 105) 5px;
+  animation-duration: 5s;
+}
+
+@media only screen and (min-width: 600px) {
+  div.mycontainer {
+    width: 80%;
+  }
+}
+
+</style>
+</head>
+<body>
+
+    <div class="top">
+        <p>Perfect Resort!</p>
+      </div>
+      <div style="text-align:center;">
+        <div class="pagination"  onclick="changePage(1)" style="display: inline-block; text-align: center;background:none;border: none;">
+            <img class="img_hover"src="https://d3kanykijpjn5y.cloudfront.net/category-7392-small-200.jpg" style=" width:120px; height:120px; vertical-align: middle; border-radius:20%;">
+            <div class="text_hover"style="color:black;padding-top:10px; font-size:20px; font-weight:600; font-family:Sofia, sans-serif;">Food</div>
+        </div>
+        <div class="pagination"  onclick="changePage(2)" style="display: inline-block; text-align: center;background:none;border: none;">
+            <img class="img_hover"src="https://d3kanykijpjn5y.cloudfront.net/category-7539-small-200.jpg" style="width:120px; height:120px; vertical-align: middle; border-radius:20%;">
+            <div class="text_hover"style="color:black;padding-top:10px; font-size:20px; font-weight:600; font-family:Sofia, sans-serif">Beverages</div>
+        </div>
+        <div class="pagination"  onclick="changePage(3)" style="display: inline-block; text-align: center;background:none;border: none;">
+            <img class="img_hover"src="https://d3kanykijpjn5y.cloudfront.net/category-7394-small-200.jpg" style="width:120px; height:120px; vertical-align: middle; border-radius:20%;"> 
+            <div class="text_hover"style="color:black;padding-top:10px; font-size:20px; font-weight:600; font-family:Sofia, sans-serif">Deserts</div>
+        </div>
+    </div>
+    
+    
+      <br>
+      <br>
+<div id="page1" class="page active">
+<img style="margin-left: 600px;"src="https://d3kanykijpjn5y.cloudfront.net/0cb490741451800ab08c5bea02433310.jpg">
+<br>
+
+<div style="border-radius: 10px;  text-decoration-line: overline underline;"class="mycontainer">
+
+  <div class="content">
+    <img style="border-radius:100px;;" class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROCys3Qu2_YH6cUTH9SBDyz2i9qFJVPbGcmQ99QZwsd82pz05dw322Um7AmPOj8mAqkGs&usqp=CAU" alt="Rome">
+    <p style="font-size:35px;"><b>Starter </b></p>
+  </div>
+
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://thecozycook.com/wp-content/uploads/2020/02/Copycat-McDonalds-French-Fries-.jpg" alt="Rome">
+    <p>French Fries</p>
+  </div>
+  <p class="rates">₹70</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.vegrecipesofindia.com/wp-content/uploads/2013/01/hara-bhara-kabab-recipe-1.jpg" alt="Rome">
+    <p>Harabara Kawab</p>
+  </div>
+  <p class="rates">₹110</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://i0.wp.com/blendofspicesbysara.com/wp-content/uploads/2021/07/PXL_20210708_193414268.PORTRAIT-01.jpeg?w=800&ssl=1" alt="Rome">
+    <p>Tandoori Gobi</p>
+  </div>
+  <p class="rates">₹120</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.sanjanafeasts.co.uk/wp-content/uploads/2023/07/Paneer-Tikka-Kebabs-on-a-platter-with-fresh-naan-bread-720x720.jpg" alt="Rome">
+    <p>Paneer Tikka</p>
+  </div>
+  <p class="rates">₹120</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://img-global.cpcdn.com/recipes/bf25dc121ef7b026/1200x630cq70/photo.jpg" alt="Rome">
+    <p>Veg Lolipop</p>
+  </div>
+  <p class="rates">₹160</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://c.ndtvimg.com/hi7ehdq8_pakoda_625x300_04_September_18.jpg" alt="Rome">
+    <p>Veg Pakoda</p>
+  </div>
+  <p class="rates">₹90</p>
+  <br>
+</div>
+<br>
+
+<div style="border-radius: 10px;  text-decoration-line: overline underline;"class="mycontainer">
+
+  <div class="content">
+    <img style="border-radius:100px;;" class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROCys3Qu2_YH6cUTH9SBDyz2i9qFJVPbGcmQ99QZwsd82pz05dw322Um7AmPOj8mAqkGs&usqp=CAU" alt="Rome">
+    <p style="font-size:35px;"><b>Veg </b></p>
+  </div>
+
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLWVjXWu1JvPByZCj6hNKuR4jNSuCUeVhT8Q&usqp=CAU" alt="Rome">
+    <p>Paneer Pakoda</p>
+  </div>
+  <p class="rates">₹250</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.shutterstock.com/image-photo/paneer-ghee-roast-masala-north-260nw-1800751372.jpg" alt="Rome">
+    <p>Paneer Sodheko</p>
+  </div>
+  <p class="rates">₹220</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://easycoolways.com/images/Easy_Recipe/Snacks/46-paneer-burger/16x9/paneer-burger.jpg" alt="Rome">
+    <p>Veg Burger</p>
+  </div>
+  <p class="rates">₹190</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://i0.wp.com/www.shanazrafiq.com/wp-content/uploads/2020/12/6-Grilled-Chicken-Sandwich-6.jpg?fit=1110%2C832&ssl=1" alt="Rome">
+    <p>Veg Sandwich</p>
+  </div>
+  <p class="rates">₹160</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://vegecravings.com/wp-content/uploads/2017/01/chole-recipe-step-by-step-instructions-13.jpg" alt="Rome">
+    <p>Masala Chhole</p>
+  </div>
+  <p class="rates">₹200</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://i.ytimg.com/vi/Do7ZdUodDdw/maxresdefault.jpg" alt="Rome">
+    <p>Veg Biryani</p>
+  </div>
+  <p class="rates">₹250</p>
+  <br>
+</div>
+<br>
+
+<div style="border-radius: 10px;  text-decoration-line: overline underline;"class="mycontainer">
+
+  <div class="content">
+    <img style="border-radius:100px;;" class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROCys3Qu2_YH6cUTH9SBDyz2i9qFJVPbGcmQ99QZwsd82pz05dw322Um7AmPOj8mAqkGs&usqp=CAU">
+    <p style="font-size:35px;"><b>Non-Veg </b></p>
+  </div>
+
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://static.toiimg.com/thumb/53205522.cms?imgsize=302803&width=800&height=800" alt="Rome">
+    <p>Butter Chicken</p>
+  </div>
+  <p class="rates">₹180</p>
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://simmertoslimmer.com/wp-content/uploads/2018/01/South-Indian-chicken-biryani.jpg" alt="Rome">
+    <p>Chicken Biryani</p>
+  </div>
+  <p class="rates">₹150</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://i.pinimg.com/originals/53/4e/07/534e070ba337f6c40e2e29034cd04679.jpg" alt="Rome">
+    <p>Chicken Pakoda</p>
+  </div>
+  <p class="rates">₹200</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://ministryofcurry.com/wp-content/uploads/2021/11/air-fryer-whole-tandoori-chicken_-3.jpg" alt="Rome">
+    <p>Chicken Tandoori</p>
+  </div>
+  <p class="rates">₹250</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://bonmasala.com/wp-content/uploads/2022/06/Chicken-65-recipe.webp" alt="Rome">
+    <p>Chicken Kawab</p>
+  </div>
+  <p class="rates">₹150</p>
+  <br>
+</div>
+
+<br>
+
+
+
+<div style="border-radius: 10px;  text-decoration-line: overline underline;"class="mycontainer">
+
+  <div class="content">
+    <img style="border-radius:100px;;" class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROCys3Qu2_YH6cUTH9SBDyz2i9qFJVPbGcmQ99QZwsd82pz05dw322Um7AmPOj8mAqkGs&usqp=CAU" alt="Rome">
+    <p style="font-size:35px;"><b>Soup </b></p>
+  </div>
+
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.chefkunalkapur.com/wp-content/uploads/2021/03/Veg-Manchow-Soup-scaled.jpeg?v=1621618246" alt="Rome">
+    <p>Manchaw Soup</p>
+  </div>
+  <p class="rates">₹140</p>
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://static.toiimg.com/thumb/88198991.cms?width=1200&height=900" alt="Rome">
+    <p>Sweet Corn Soup</p>
+  </div>
+  <p class="rates">₹200</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/11/tomato-soup-recipe-500x375.jpg" alt="Rome">
+    <p>Cream of Tomato Soup</p>
+  </div>
+  <p class="rates">₹150</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://tastesbetterfromscratch.com/wp-content/uploads/2020/09/Spicy-Chicken-Soup-2-500x500.jpg" alt="Rome">
+    <p>Chicken Manchow Soup</p>
+  </div>
+  <p class="rates">₹220</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://images.slurrp.com/prod/articles/eqvcg9vd1xm.webp" alt="Rome">
+    <p>Hot&Sour Chicken Soup</p>
+  </div>
+  <p class="rates">₹250</p>
+  <br>
+</div>
+
+<div class="bottom">
+  <h1><b>The Vella's</b></h1>
+  <a href="roomcat2.html">Rooms</a><br>
+  <a href="Gym.html">Gym</a><br>
+  <a href="">Activities</a><br>
+  <a href="">Facilities</a><br>
+  <a class="Aminities"href="Food.html">Food</a><br>
+<h1>CONTACT US</h1>
+<hr style="width:50%;">
+<p>✉thevellas@gmail.com</p>
+<p><a href="#" class="fa fa-whatsapp"></a> WhatsApp: +915629292049</p>
+<p>📌address- Pyramid Complex, 81/82, East Main Road, MIT Lawns, Kothrud, Pune, Maharashtra 411036</p>
+<p><b>FOLLOW US</b></p>
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-instagram"></a>
+<hr style="width:70%;">
+<p>&copy; Copyright 2024 THE VELLA'S Rstaurant A Unit Of Eventastic Hospitality LLP Powered  by UpSales Suite</p>
+<p style="text-decoration-line: overline underline; font-size:20px; font-family: Sofia;">fssai</p>
+<p>Licence Number: 123456700000</p>
+<br>
+</div>
+</div>
+
+
+
+<div id="page2" class="page">
+  <img style="margin-left: 600px;"src="https://d3kanykijpjn5y.cloudfront.net/0cb490741451800ab08c5bea02433310.jpg">
+
+
+
+
+
+<div style="border-radius: 10px;  text-decoration-line: overline underline;"class="mycontainer">
+
+  <div class="content">
+    <img style="border-radius:100px;;" class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROCys3Qu2_YH6cUTH9SBDyz2i9qFJVPbGcmQ99QZwsd82pz05dw322Um7AmPOj8mAqkGs&usqp=CAU" alt="Rome">
+    <p style="font-size:35px;"><b>Tea </b></p>
+  </div>
+
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://media.istockphoto.com/id/475614605/photo/black-tea-in-a-cup.jpg?s=612x612&w=0&k=20&c=YE2Bq4fRBpzZt_7fCIRDxws7ugxsS-nYlKx3SQioiUY=" alt="Rome">
+    <p>Black Tea</p>
+  </div>
+  <p class="rates">₹20</p>
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://detoxinista.com/wp-content/uploads/2020/10/ginger-tea-recipe.jpg" alt="Rome">
+    <p>Ginger Tea</p>
+  </div>
+  <p class="rates">₹10</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.ndtv.com/cooks/images/Iced.Mint.and.Lime.Tea-620.jpg" alt="Rome">
+    <p>Lime Tea</p>
+  </div>
+  <p class="rates">₹20</p>
+  <br>
+</div>
+<br>
+<div style="border-radius: 10px;  text-decoration-line: overline underline;"class="mycontainer">
+
+  <div class="content">
+    <img style="border-radius:100px;;" class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROCys3Qu2_YH6cUTH9SBDyz2i9qFJVPbGcmQ99QZwsd82pz05dw322Um7AmPOj8mAqkGs&usqp=CAU" alt="Rome">
+    <p style="font-size:35px;"><b>Coffee </b></p>
+  </div>
+
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.adityabirlacapital.com/healthinsurance/active-together/wp-content/uploads/2019/12/How-Are-Espressos-Good-For-Health_blog_lower_1-1200x1200.png" alt="Rome">
+    <p>Espresso</p>
+  </div>
+  <p class="rates">₹60</p>
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://media.istockphoto.com/id/157528129/photo/mug-on-plate-filled-with-coffee-surrounded-by-coffee-beans.jpg?s=612x612&w=0&k=20&c=W_za-myO9QP_dimiJeZXsR4G2GHjrdo0RTyO3yVhopQ=" alt="Rome">
+    <p>Black Coffee</p>
+  </div>
+  <p class="rates">₹30</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfuMGggFC0vNNkTbyuveiJRySPAddNhQ2dInjCt-DCFTuAEaGY1vyQtUTLC1yMli7eRxU&usqp=CAU" alt="Rome">
+    <p>Americano</p>
+  </div>
+  <p class="rates">₹40</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.foodandwine.com/thmb/0cJWTx1_qsIJJE74hWLZ5rHWvsE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Partners-Cappuccino-FT-BLOG0523-d2eed8fcd48d464282176339908662f7.jpg" alt="Rome">
+    <p>Capuccinno</p>
+  </div>
+  <p class="rates">₹50</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Latte_art_3.jpg" alt="Rome">
+    <p>Coffe Latte</p>
+  </div>
+  <p class="rates">₹50</p>
+  <br>
+</div>
+<br>
+<div style="border-radius: 10px;  text-decoration-line: overline underline;"class="mycontainer">
+
+  <div class="content">
+    <img style="border-radius:100px;;" class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROCys3Qu2_YH6cUTH9SBDyz2i9qFJVPbGcmQ99QZwsd82pz05dw322Um7AmPOj8mAqkGs&usqp=CAU" alt="Rome">
+    <p style="font-size:35px;"><b>Soft Drinks </b></p>
+  </div>
+
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIYfHmkmW0pPBQTtz7ANO9dGRohnj_4zoaKg&usqp=CAU" alt="Rome">
+    <p>Coca Cola</p>
+  </div>
+  <p class="rates">₹40</p>
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7vi-BaNw-RsUHMEV8-b0nElCrNt82WyurzA&usqp=CAU" alt="Rome">
+    <p>Sprite</p>
+  </div>
+  <p class="rates">₹40</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjj-MJ_Z77PK09DC_EeI0u21yoCSyfMensYQ&usqp=CAU" alt="Rome">
+    <p>Diet Cola</p>
+  </div>
+  <p class="rates">₹50</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://5.imimg.com/data5/SELLER/Default/2022/8/VW/CI/IN/81650488/tonic-water-bottle-500x500.jpg" alt="Rome">
+    <p>Tonic Water</p>
+  </div>
+  <p class="rates">₹30</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://media.istockphoto.com/id/451992561/photo/pouring-mineral-water-in-the-glass.jpg?s=612x612&w=0&k=20&c=7dnUaYasZDtzsqVuD4gdNaEfI-EsqDoES5zqBBKh-H4=" alt="Rome">
+    <p>Soda Water</p>
+  </div>
+  <p class="rates">₹30</p>
+  <br>
+</div>
+<br>
+<div style="border-radius: 10px;  text-decoration-line: overline underline;"class="mycontainer">
+
+  <div class="content">
+    <img style="border-radius:100px;;" class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROCys3Qu2_YH6cUTH9SBDyz2i9qFJVPbGcmQ99QZwsd82pz05dw322Um7AmPOj8mAqkGs&usqp=CAU" alt="Rome">
+    <p style="font-size:35px;"><b>Mocktails </b></p>
+  </div>
+
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://fullofplants.com/wp-content/uploads/2021/05/easy-virgin-mojito-alcohol-free-kid-friendly-refreshing-drink-thumb.jpg" alt="Rome">
+    <p>Virgin Mojito</p>
+  </div>
+  <p class="rates">₹80</p>
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMw5iGsgAbW67VtZf8zfpBawHWF0WcinV-g&usqp=CAU" alt="Rome">
+    <p>berry passion</p>
+  </div>
+  <p class="rates">₹80</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://bellyfull.net/wp-content/uploads/2021/04/Seabreeze-Cocktail-blog-2.jpg" alt="Rome">
+    <p>Sea Breeze</p>
+  </div>
+  <p class="rates">₹80</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.culinaryhill.com/wp-content/uploads/2022/06/Fruit-Punch-Culinary-Hill-1200x800-1.jpg" alt="Rome">
+    <p>Fruit Punch</p>
+  </div>
+  <p class="rates">₹90</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.acouplecooks.com/wp-content/uploads/2021/06/Green-Juice-Recipe-007.jpg" alt="Rome">
+    <p>Mix Vegie</p>
+  </div>
+  <p class="rates">₹90</p>
+  <br>
+</div>
+<br>
+<div style="border-radius: 10px;  text-decoration-line: overline underline;"class="mycontainer">
+
+  <div class="content">
+    <img style="border-radius:100px;;" class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROCys3Qu2_YH6cUTH9SBDyz2i9qFJVPbGcmQ99QZwsd82pz05dw322Um7AmPOj8mAqkGs&usqp=CAU">
+    <p style="font-size:35px;"><b>Cocktails </b></p>
+  </div>
+
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.thespruceeats.com/thmb/lFTuUOtCtmUu011vydbsNB2-m5w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-mojito-cocktail-recipe-759319-hero-01-038a050a144342b9aeea94d266d3527c.jpg" alt="Rome">
+    <p>Mojito</p>
+  </div>
+  <p class="rates">₹90</p>
+  <br>
+</div>
+
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://www.acouplecooks.com/wp-content/uploads/2021/03/Blue-Lagoon-Cocktail-007s.jpg" alt="Rome">
+    <p>Blue Lagoon</p>
+  </div>
+  <p class="rates">₹90</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://recipes.net/wp-content/uploads/2023/05/classic-margarita-recipe_780ef5cf753cf58502c26278fa094aa1.jpeg" alt="Rome">
+    <p>Margarita</p>
+  </div>
+  <p class="rates">₹120</p>
+  <br>
+</div>
+
+<div class="mycontainer">
+  <div class="content">
+    <img class="img" src="https://images.immediate.co.uk/production/volatile/sites/30/2013/11/pina-colada-c68aca7.jpg?quality=90&resize=556,505" alt="Rome">
+    <p>Pinacolada</p>
+  </div>
+  <p class="rates">₹130</p>
+  <br>
+</div>
+
+
+<div class="bottom">
+  <h1><b>The Vella's</b></h1>
+  <a href="roomcat2.html">Rooms</a><br>
+  <a href="Gym.html">Gym</a><br>
+  <a href="">Activities</a><br>
+  <a href="">Facilities</a><br>
+  <a href="Food.html">Food</a><br>
+
+<h1>CONTACT US</h1>
+<hr style="width:50%;">
+<p>✉thevellas@gmail.com</p>
+<p>✆WhatsApp: +915629292049</p>
+<p>📌address- Pyramid Complex, 81/82, East Main Road, MIT Lawns, Kothrud, Pune, Maharashtra 411036</p>
+<p><b>FOLLOW US</b></p>
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-instagram"></a>
+<hr style="width:70%;">
+<p>&copy; Copyright 2024 THE VELLA'S Rstaurant A Unit Of Eventastic Hospitality LLP Powered  by UpSales Suite</p>
+<p style="text-decoration-line: overline underline; font-size:20px; font-family: Sofia;">fssai</p>
+<p>Licence Number: 123456700000</p>
+<br>
+</div>
+</div>
+
+
+<div id="page3" class="page">
+  <img style="margin-left: 600px;"src="https://d3kanykijpjn5y.cloudfront.net/0cb490741451800ab08c5bea02433310.jpg">
+  
+  
+  <div style="border-radius: 10px;"class="mycontainer">
+    <div class="content">
+      <img class="img" src="https://themadscientistskitchen.com/wp-content/uploads/2020/08/Khubani-ka-Meetha.jpg" alt="Rome">
+      <p>Qurbani ka Meetha</p>
+    </div>
+    <p class="rates">₹220</p>
+    <br>
+  </div>
+  
+  
+  <div class="mycontainer">
+    <div class="content">
+      <img class="img" src="https://www.archanaskitchen.com/images/archanaskitchen/Indian_Sweets_Mithai/Low_Calorie_Moong_Dal_Halwa.jpg" alt="Rome">
+      <p>Moong Dal Halwa</p>
+    </div>
+    <p class="rates">₹220</p>
+    <br>
+  </div>
+  
+  <div class="mycontainer">
+    <div class="content">
+      <img class="img" src="https://recipes.net/wp-content/uploads/2023/05/gulab-jamun-recipe_9fb159dc2674f395436a64666227c988.jpeg" alt="Rome">
+      <p>Gulab Jamun (2 pcs)</p>
+    </div>
+    <p class="rates">₹150</p>
+    <br>
+  </div>
+  
+  
+  <div class="mycontainer">
+    <div class="content">
+      <img class="img" src="https://www.cookingcarnival.com/wp-content/uploads/2014/11/Gajar-halwa-3.jpg" alt="Rome">
+      <p>Gajar ka Halwa</p>
+    </div>
+    <p class="rates">₹160</p>
+    <br>
+  </div>
+  
+  
+  <div class="mycontainer">
+    <div class="content">
+      <img class="img" src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/semiya-payasam-vermicelli-payasam-500x500.jpg" alt="Rome">
+      <p>Payasam</p>
+    </div>
+    <p class="rates">₹160</p>
+    <br>
+  </div>
+  
+  <div class="mycontainer">
+    <div class="content">
+      <img class="img" src="https://cdn.britannica.com/50/80550-050-5D392AC7/Scoops-kinds-ice-cream.jpg" alt="Rome">
+      <p>Ice Creams (1 Spoon)</p>
+    </div>
+    <p class="rates">₹60</p>
+    <br>
+  </div>
+  
+  <div class="mycontainer">
+    <div class="content">
+      <img class="img" src="https://i.ytimg.com/vi/NVA6tceBry0/maxresdefault.jpg" alt="Rome">
+      <p>Ras Malai</p>
+    </div>
+    <p class="rates">₹150</p>
+    <br>
+  </div>
+  
+  <div class="mycontainer">
+    <div class="content">
+      <img class="img" src="https://i.ytimg.com/vi/FtE2_GzwrXE/maxresdefault.jpg" alt="Rome">
+      <p>Cut Fruits</p>
+    </div>
+    <p class="rates">₹120</p>
+    <br>
+  </div>
+  
+  
+  
+  
+  <div class="bottom">
+    <h1><b>The Vella's</b></h1>
+    <a href="roomcat2.html">Rooms</a><br>
+    <a href="Gym.html">Gym</a><br>
+    <a href="">Activities</a><br>
+    <a href="">Facilities</a><br>
+    <a class="Aminities"href="Food.html">Food</a><br>
+  <h1>CONTACT US</h1>
+  <hr style="width:50%;">
+  <p>✉thevellas@gmail.com</p>
+  <p><a href="#" class="fa fa-whatsapp"></a> WhatsApp: +915629292049</p>
+  <p>📌address- Pyramid Complex, 81/82, East Main Road, MIT Lawns, Kothrud, Pune, Maharashtra 411036</p>
+  <p><b>FOLLOW US</b></p>
+  <a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-instagram"></a>
+  <hr style="width:70%;">
+  <p>&copy; Copyright 2024 THE VELLA'S Rstaurant A Unit Of Eventastic Hospitality LLP Powered  by UpSales Suite</p>
+  <p style="text-decoration-line: overline underline; font-size:20px; font-family: Sofia;">fssai</p>
+  <p>Licence Number: 123456700000</p>
+  <br>
+  </div>
+  </div>
+  
+
+
+
+<script>
+function changePage(pageNumber) {
+
+  var pages = document.getElementsByClassName('page');
+  for (var i = 0; i < pages.length; i++) {
+    pages[i].style.display = 'none';
+  }
+
+  document.getElementById('page' + pageNumber).style.display = 'block';
+}
+</script>
+
+</body>
+</html>

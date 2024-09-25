@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resort Homepage</title>
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="resort.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="head">
+        <h1>Perfect Resort for Staycation and Party!</h1>
+    </div>
+    <img class="profileimg" src="Images/Profile.png" alt="Profile Image">
+    <img class="menu" src="https://www.marinaexpress-fisherman.com/wp-content/uploads/2022/05/amenities.jpg"
+        alt="Menu Image">
+
+    <div class="Img-grid">
+        <div class="Img-preview">
+            <div class="thumbnail-row">
+                <a href="Food.html">
+                    <img class="thumbnail"
+                        src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG90ZWwlMjBmb29kfGVufDB8fDB8fHww"
+                        alt="Thumbnail 1">
+                </a>
+            </div>
+            <div class="Img-info">
+                <p class="Img-title">Menu</p>
+            </div>
+        </div>
+     
+        <div class="Img-preview">
+            <div class="thumbnail-row">
+                <a href="Gym.html">
+                    <img class="thumbnail"
+                        src="https://media.cntraveler.com/photos/5f6a575bf418844234b01030/16:9/w_2560,c_limit/FourSeasonsSantaFe-2020.jpg%20" alt="Thumbnail 2">
+                </a>
+            </div>
+            <div class="Img-info">
+                <p class="Img-title">GYM</p>
+            </div>
+        </div>
+       
+        <div class="Img-preview">
+            <div class="thumbnail-row">
+                <a href="Facilities.html">
+                    <img class="thumbnail"
+                        src="https://media.radissonhotels.net/image/radisson-blu-resort-vishakhapatnam/suite/16256-126787-f72718189_3xl.jpg?impolicy=HomeHero" alt="Thumbnail 2">
+                </a>
+            </div>
+            <div class="Img-info">
+                <p class="Img-title">FACILITIES</p>
+            </div>
+        </div>
+
+        <div class="Img-preview">
+            <div class="thumbnail-row">
+                <a href="Activities.html">
+                    <img class="thumbnail"
+                        src="https://assets-global.website-files.com/5c6d6c45eaa55f57c6367749/65045302e6db68b14ac5639f_x-650452f4dd2fb.webp" alt="Thumbnail 2">
+                </a>
+            </div>
+            <div class="Img-info">
+                <p class="Img-title">ACTIVITIES</p>
+            </div>
+        </div>
+
+        <div class="Img-preview">
+            <div class="thumbnail-row">
+                <a href="roomcat2.html">
+                    <img class="thumbnail"
+                        src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVzb3J0JTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D" alt="Thumbnail 2">
+                </a>
+            </div>
+            <div class="Img-info">
+                <p class="Img-title">Room</p>
+            </div>
+        </div>`
+    </div>
+    <img style="margin-left: 600px;margin-top: 100px;height:150px;width:300px;"src="https://images.shulcloud.com/557/uploads/location.png" alt="Additional Image">
+
+  <div id="map" style="height: 400px;"></div>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+      var map = L.map('map').setView([18.5158, 73.8246], 13);
+
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      L.marker([18.5158, 73.8246]).addTo(map)
+        .bindPopup('MIT Kothrud, Pune').openPopup();
+    });
+  </script>
+ 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8um55F715IyKRPApenW3Q337_DVJowj4&callback=myMap"></script>
+    
+
+    <img style="margin-left: 600px;margin-top: 100px;"src="https://d3kanykijpjn5y.cloudfront.net/d2e24374cb3195e9ffc07ca2b8e6091c.jpg" alt="Additional Image">
+
+    <div class="bottom">
+        <h1><b>The Vella's</b></h1>
+        <a class="Aminities"href="roomcat2.html">Rooms</a><br>
+        <a class="Aminities"href="Gym.html">Gym</a><br>
+        <a class="Aminities"href="Activities.html">Activities</a><br>
+        <a class="Aminities"href="Facilities.html">Facilities</a><br>
+        <a class="Aminities"href="Food.html">Food</a><br>
+      <h1>CONTACT US</h1>
+      <hr style="width:50%;">
+      <p>✉thevellas@gmail.com</p>
+      <p>✆WhatsApp: +915629292049</p>
+      <p>📌address- Pyramid Complex, 81/82, East Main Road, MIT Lawns, Kothrud, Pune, Maharashtra 411036</p>
+      <p><b>FOLLOW US</b></p>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <hr style="width:70%;">
+      <p>@Copyright 2024 THE VELLA'S Resort ,A Unit Of Eventastic Hospitality LLP Powered  by UpSales Suite</p>
+      <p style="text-decoration-line: overline underline; font-size:20px; font-family: Sofia;">fssai</p>
+      <p>Licence Number: 123456700000</p>
+      <br>
+      </div>      
+      </div>
+      
+      
+      
+      <div id="page2" class="page">
+        <h2>work in progess</h2>
+        <p>This is the page for beverages.</p>
+      </div>
+      
+      <div id="page3" class="page">
+        <h2>work in progess</h2>
+        <p>This is the page of deserts.</p>
+      </div>
+      
+      
+      
+      <script>
+      function changePage(pageNumber) {
+        // Hide all pages
+        var pages = document.getElementsByClassName('page');
+        for (var i = 0; i < pages.length; i++) {
+          pages[i].style.display = 'none';
+        }
+        document.getElementById('page' + pageNumber).style.display = 'block';
+      }
+      </script>
+      
+</body>
+
+</html>
+

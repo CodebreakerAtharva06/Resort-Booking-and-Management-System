@@ -1,0 +1,55 @@
+ <style>
+        /* Style for form container */
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for form input fields */
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        textarea,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Style for submit button */
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Change button color on hover */
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <div class="form-container">
+        <form id="enquiryForm" method="POST" action="enquiry.php">
+            <input type="text" id="Name" name="Name" placeholder="Full Name" required>
+            <input type="email" id="Email" name="Email" placeholder="Email" required>
+            <input type="tel" id="Contact_No" name="Contact_No" placeholder="Contact No" required>
+            <textarea id="Enquiry" name="Enquiry" placeholder="Your Enquiry" rows="4" required></textarea>
+            <button type="submit" name="submit_enquiry">Submit</button>
+        </form>
+    </div>
+    <form action="enquiry.php" method="post">
+    </form>
+</body>
+</html>
+
+
